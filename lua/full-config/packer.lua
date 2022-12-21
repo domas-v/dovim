@@ -163,9 +163,21 @@ return require('packer').startup(function(use)
         config = function() require('todo-comments').setup() end
     }
 
-    -- TODO: quickfix https://github.com/kevinhwang91/nvim-bqf
-    -- TODO: replaer https://github.com/gabrielpoca/replacer.nvim
+    -- quickfix
+    use {
+        'kevinhwang91/nvim-bqf',
+        ft = 'qf',
+        requires = {
+            'junegunn/fzf',
+            run = function()
+                vim.fn['fzf#install']()
+            end
+
+        }
+    }
+
     -- TODO: zen mode https://github.com/folke/zen-mode.nvim
+    -- TODO: execute python https://github.com/smzm/hydrovim
     -- TODO: undotree
     -- TODO: multi-cursor
 end)

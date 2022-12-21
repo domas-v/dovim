@@ -42,7 +42,7 @@ map('t', '<C-x>', '<C-\\><C-N>', { noremap = true })
 -- search & replace
 -- map("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- word under cursor
 map("v", "<leader>r" , ":s/")  -- in visual selection
-map("n", "<leader>br", ":%s/") -- in whole buffer
+map("n", "<leader>r", ":%s/") -- in whole buffer
 -- map("n", "<leader>s", "/") -- temporary search (currently telescope fuzzy buffer search doesn't work)
 
 -- windows/buffers
@@ -83,6 +83,3 @@ map("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>")
 map("n", "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>")
 map("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>")
 map("n", "<leader>gb", "<cmd>GitBlameToggle<cr>")
-
--- debug
-
