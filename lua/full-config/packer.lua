@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    -- TODO: treesitter textobjects
     use {
         'p00f/nvim-ts-rainbow',
         'nvim-treesitter/playground'
@@ -184,8 +185,16 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- TODO: zen mode https://github.com/folke/zen-mode.nvim
-    -- TODO: execute python https://github.com/smzm/hydrovim
-    -- TODO: undotree
-    -- TODO: multi-cursor
+    -- Note taking
+        -- TODO: code runner
+        -- TODO: obsidian.nvim
+        -- TODO: image viewer (looks awesome 🎉)
+            -- https://github.com/edluffy/hologram.nvim
+            -- https://github.com/bytesnake/vim-graphical-preview
+        -- TODO: markdown preview
+        -- TODO: zen mode https://github.com/folke/zen-mode.nvim
+    -- Other
+        -- TODO: execute python https://github.com/smzm/hydrovim
+        -- TODO: undotree
+        -- TODO: multi-cursor
 end)
