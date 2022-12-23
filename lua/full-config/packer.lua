@@ -58,6 +58,14 @@ return require('packer').startup(function(use)
         'folke/tokyonight.nvim'
     }
 
+    -- ui -- noice
+   -- Packer
+   use {
+       "folke/noice.nvim",
+       config = function() require("noice").setup() end,
+       requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" }
+   }
+
     -- sanity
     use {
         'windwp/nvim-autopairs',

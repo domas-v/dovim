@@ -48,7 +48,7 @@ o.completeopt = "menuone,noselect" -- completion type
 -- performance
 o.updatetime = 100
 o.timeoutlen = 600
-o.lazyredraw = true
+o.lazyredraw = false
 
 -- bufferline
 g.bufferline = {
