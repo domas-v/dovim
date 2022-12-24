@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
             { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
+            { 'PaterJason/cmp-conjure' },
 
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
@@ -63,7 +64,6 @@ return require('packer').startup(function(use)
    -- Packer
    use {
        "folke/noice.nvim",
-       config = function() require("noice").setup() end,
        requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" }
    }
 
@@ -131,9 +131,8 @@ return require('packer').startup(function(use)
 
     -- autosave
     use {
-        'nvim-zh/auto-save.nvim',
-        config = function() require('auto-save').setup() end,
-    }
+        'Pocco81/auto-save.nvim',
+        config = function() require('auto-save').setup({ execution_message = { message = "" } }) end, }
 
     -- movement
     use {
@@ -183,6 +182,12 @@ return require('packer').startup(function(use)
             end
 
         }
+    }
+
+    -- lisp support
+    use {
+        'Olical/conjure',
+        config = function () vim.g["conjure#filetypes"] = { "scheme" } end
     }
 
     -- Note taking
