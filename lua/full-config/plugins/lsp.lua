@@ -3,7 +3,7 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 lsp.ensure_installed({
     "sumneko_lua",
-    "pyright"
+    "pyright",
 })
 
 -- Fix Undefined global 'vim'
@@ -26,6 +26,7 @@ lsp.setup_nvim_cmp({
         { name = 'nvim_lsp', keyword_length = 1 },
         { name = 'buffer', keyword_length = 1 },
         { name = 'tabnine' },
+        { name = 'conjure' }
     },
     mapping = lsp.defaults.cmp_mappings({
         ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),

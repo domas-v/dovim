@@ -1,7 +1,7 @@
 require("settings")
 if vim.g.vscode then
-	require("partial-config")
+    require("partial-config")
 else
-	require("full-config")
+    require("full-config")
 end
 

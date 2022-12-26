@@ -7,7 +7,8 @@ return require('packer').startup(function(use)
     -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        run = ':TSUpdate',
+        config = function () require('full-config.plugins.treesitter') end
     }
     -- TODO: treesitter textobjects
     use {
@@ -38,14 +39,16 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
         },
-        use { 'tzachar/cmp-tabnine', run='./install.sh' }
+        use { 'tzachar/cmp-tabnine', run='./install.sh' },
+        config = function () require('full-config.plugins.lsp') end
     }
 
     -- telescope
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { {'nvim-lua/plenary.nvim'} },
+        config = function () require('full-config.plugins.telescope') end
     }
     use {
         'nvim-telescope/telescope-fzf-native.nvim',
@@ -55,16 +58,16 @@ return require('packer').startup(function(use)
 
     -- colors
     use {
-        'catppuccin/nvim',
-        'monsonjeremy/onedark.nvim',
-        'folke/tokyonight.nvim'
+        'folke/tokyonight.nvim',
+        config = function () require('full-config.plugins.colors') end
     }
 
     -- ui -- noice
    -- Packer
    use {
        "folke/noice.nvim",
-       requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" }
+       requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+       config = function () require("full-config.plugins.noice") end
    }
 
     -- sanity
@@ -98,7 +101,8 @@ return require('packer').startup(function(use)
     -- lualine
     use {
         'nvim-lualine/lualine.nvim',
-        requires =  'kyazdani42/nvim-web-devicons'
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function () require('full-config.plugins.lualine') end
     }
 
     -- tabs/buffers/windows
@@ -145,7 +149,10 @@ return require('packer').startup(function(use)
     }
 
     -- terminal
-    use { 'akinsho/toggleterm.nvim' }
+    use {
+        'akinsho/toggleterm.nvim',
+        config = function () require('full-config.plugins.toggleterm') end
+    }
 
     -- debug
     use {
@@ -156,6 +163,7 @@ return require('packer').startup(function(use)
             'theHamsta/nvim-dap-virtual-text',
             'rcarriga/cmp-dap',
         },
+        config = function () require('full-config.plugins.dap') end
     }
 
     -- diagnostics
@@ -184,14 +192,18 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- lisp support
+    -- code runners
     use {
         'Olical/conjure',
-        config = function () vim.g["conjure#filetypes"] = { "scheme" } end
+        config = function () vim.g["conjure#filetypes"] = { "scheme", "markdown" } end
+    }
+    use {
+        'michaelb/sniprun',
+        run = 'bash ./install.sh',
+        config = function () require('full-config.plugins.sniprun') end
     }
 
-    -- Note taking
-        -- TODO: code runner
+    -- note taking
         -- TODO: obsidian.nvim
         -- TODO: image viewer (looks awesome 🎉)
             -- https://github.com/edluffy/hologram.nvim

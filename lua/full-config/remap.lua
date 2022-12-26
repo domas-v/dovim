@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = ";"
 local map = vim.keymap.set
 
 -- move visual selection
@@ -24,7 +25,7 @@ map("n", "Y", "y$")
 map("n", "J", "mzJ`z") -- join lines, stay cursor
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
-map("n", "<leader>q", "<cmd>q<cr>" )
+map("n", "<leader>q", "<cmd>close<cr>" )
 map("n", "<leader>Q", "<cmd>qa<cr>")
 map("n", "<esc>", "<cmd>nohl<cr>")
 

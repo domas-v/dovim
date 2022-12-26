@@ -22,7 +22,7 @@ o.backup = false
 o.shortmess= o.shortmess .. 'c'
 
 -- appearance
-wo.conceallevel = 2
+-- wo.conceallevel = 2
 o.splitbelow = true
 o.splitright = true
 o.shiftround = true
