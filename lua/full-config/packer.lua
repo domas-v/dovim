@@ -33,7 +33,6 @@ return require('packer').startup(function(use)
             { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
-            { 'PaterJason/cmp-conjure' },
 
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
@@ -62,7 +61,7 @@ return require('packer').startup(function(use)
         config = function () require('full-config.plugins.colors') end
     }
 
-    -- ui -- noice
+   -- ui -- noice
    -- Packer
    use {
        "folke/noice.nvim",
@@ -153,6 +152,10 @@ return require('packer').startup(function(use)
         'akinsho/toggleterm.nvim',
         config = function () require('full-config.plugins.toggleterm') end
     }
+    use {
+        'hkupty/iron.nvim',
+        config = function () require('full-config.plugins.iron') end
+    }
 
     -- debug
     use {
@@ -192,26 +195,10 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- code runners
-    use {
-        'Olical/conjure',
-        config = function () vim.g["conjure#filetypes"] = { "scheme", "markdown" } end
-    }
-    use {
-        'michaelb/sniprun',
-        run = 'bash ./install.sh',
-        config = function () require('full-config.plugins.sniprun') end
-    }
+    -- misc
+    use { "dstein64/vim-startuptime" }
 
-    -- note taking
-        -- TODO: obsidian.nvim
-        -- TODO: image viewer (looks awesome 🎉)
-            -- https://github.com/edluffy/hologram.nvim
-            -- https://github.com/bytesnake/vim-graphical-preview
-        -- TODO: markdown preview
-        -- TODO: zen mode https://github.com/folke/zen-mode.nvim
-    -- Other
-        -- TODO: execute python https://github.com/smzm/hydrovim
-        -- TODO: undotree
-        -- TODO: multi-cursor
+    -- TODO: execute python https://github.com/smzm/hydrovim
+    -- TODO: undotree
+    -- TODO: multi-cursor
 end)
