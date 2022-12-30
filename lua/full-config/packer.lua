@@ -10,10 +10,10 @@ return require('packer').startup(function(use)
         run = ':TSUpdate',
         config = function () require('full-config.plugins.treesitter') end
     }
-    -- TODO: treesitter textobjects
     use {
         'p00f/nvim-ts-rainbow',
-        'nvim-treesitter/playground'
+        'nvim-treesitter/playground',
+        'nvim-treesitter/nvim-treesitter-textobjects'
     }
 
     -- lsp
