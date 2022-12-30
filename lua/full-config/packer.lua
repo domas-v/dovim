@@ -198,7 +198,6 @@ return require('packer').startup(function(use)
     -- misc
     use { "dstein64/vim-startuptime" }
 
-    -- TODO: execute python https://github.com/smzm/hydrovim
     -- TODO: undotree
     -- TODO: multi-cursor
 end)

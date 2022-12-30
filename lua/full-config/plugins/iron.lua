@@ -34,7 +34,7 @@ iron.setup{
         buflisted = true,
     },
     keymaps = {
-        send_motion = "<space>ee",
+        send_motion = "<space>e",
         visual_send = "<space>ee",
         send_file = "<space>ef",
         send_line = "<space>el",
