@@ -28,10 +28,8 @@ iron.setup{
                 command = {"guile"}
             }
         },
-        repl_open_cmd = require('iron.view').right(function()
-            return vim.o.columns / 2
-        end),
-        buflisted = true,
+        repl_open_cmd = require('iron.view').split.vertical.botright(0.47),
+        buflisted = false,
     },
     keymaps = {
         send_motion = "<space>e",
@@ -52,6 +50,7 @@ iron.setup{
     }
 }
 
-vim.keymap.set("n", "<leader>ii", "<cmd>IronReplHere<cr>")
+vim.keymap.set("n", "<leader>ii", "<cmd>IronRepl<cr>")
+vim.keymap.set("n", "<leader>it", "<cmd>IronReplHere<cr>")
 vim.keymap.set("n", "<leader>if", "<cmd>IronFocus<cr>")
 vim.keymap.set("n", "<leader>ih", "<cmd>IronHide<cr>")
