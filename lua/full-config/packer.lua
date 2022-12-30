@@ -1,7 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
     -- treesitter
@@ -61,13 +60,14 @@ return require('packer').startup(function(use)
         config = function () require('full-config.plugins.colors') end
     }
 
-   -- ui -- noice
-   -- Packer
+   -- ui
    use {
        "folke/noice.nvim",
        requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
        config = function () require("full-config.plugins.noice") end
    }
+    -- TODO: undotree
+    -- TODO: folds
 
     -- sanity
     use {
@@ -96,6 +96,7 @@ return require('packer').startup(function(use)
             filetype_exclude = { 'startup', },
         }) end
     }
+    -- TODO: multi-cursor
 
     -- lualine
     use {
@@ -131,6 +132,7 @@ return require('packer').startup(function(use)
         'f-person/git-blame.nvim',
         config = function () vim.g['gitblame_enabled'] = 0 end
     }
+    -- TODO: lazygit?
 
     -- autosave
     use {
@@ -197,9 +199,22 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- note taking
+    use {
+        'jbyuki/nabla.nvim',
+        config = function ()
+            vim.keymap.set('n', '<leader>pv', ':lua require("nabla").enable_virt()<CR>')
+            vim.keymap.set('n', '<leader>pm', ':lua require("nabla").popup()<CR>')
+        end
+    }
+    use {
+        -- BUG: messages on different files. (check this pr: https://github.com/edluffy/hologram.nvim/pull/26)
+        -- 'edluffy/hologram.nvim',
+        -- config = function () require('hologram').setup({auto_display = true}) end,
+        -- ft = { 'markdown', 'md' }
+    }
+
     -- misc
     use { "dstein64/vim-startuptime" }
 
-    -- TODO: undotree
-    -- TODO: multi-cursor
 end)
