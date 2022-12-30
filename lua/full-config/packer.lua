@@ -124,8 +124,8 @@ return require('packer').startup(function(use)
     use {
         'TimUntersberger/neogit',
         cmd = 'Neogit',
-        config = function () require('neogit').setup() end,
-        requires = 'nvim-lua/plenary.nvim',
+        config = function () require('neogit').setup({integrations = {diffview = true}}) end,
+        requires = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' }
     }
     use {
         'f-person/git-blame.nvim',
