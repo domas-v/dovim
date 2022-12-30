@@ -29,7 +29,7 @@ iron.setup{
             }
         },
         repl_open_cmd = require('iron.view').split.vertical.botright(0.47),
-        buflisted = false,
+        buflisted = true,
     },
     keymaps = {
         send_motion = "<space>e",

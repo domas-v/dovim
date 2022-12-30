@@ -147,14 +147,16 @@ return require('packer').startup(function(use)
         config = function () require('flit').setup() end
     }
 
-    -- terminal
+    -- terminal & runners
+    -- TODO: jupyter support
     use {
         'akinsho/toggleterm.nvim',
         config = function () require('full-config.plugins.toggleterm') end
     }
     use {
         'hkupty/iron.nvim',
-        config = function () require('full-config.plugins.iron') end
+        config = function () require('full-config.plugins.iron') end,
+        cmd = { 'IronRepl', 'IronReplHere', 'IronSend', 'IronAttach' }
     }
 
     -- debug
