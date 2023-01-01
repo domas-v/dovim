@@ -22,17 +22,22 @@ o.backup = false
 o.shortmess= o.shortmess .. 'c'
 
 -- appearance
--- wo.conceallevel = 2
+wo.conceallevel = 2
 o.splitbelow = true
 o.splitright = true
 o.shiftround = true
 o.wrap = true
 o.cmdheight = 1
-o.foldlevelstart = 2
 o.showmatch = true  -- show bracket macthing
 o.scrolloff = 8
 o.signcolumn = "yes"
 o.termguicolors = true
+
+-- folds
+vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 -- search
 o.ignorecase = true
