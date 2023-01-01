@@ -22,7 +22,6 @@ o.backup = false
 o.shortmess= o.shortmess .. 'c'
 
 -- appearance
-wo.conceallevel = 2
 o.splitbelow = true
 o.splitright = true
 o.shiftround = true
@@ -34,8 +33,9 @@ o.signcolumn = "yes"
 o.termguicolors = true
 
 -- folds
-vim.o.foldcolumn = '1' -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+wo.conceallevel = 2
+vim.o.foldcolumn = '1'
+vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
