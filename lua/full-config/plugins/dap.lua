@@ -19,20 +19,28 @@ dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
 
-vim.fn.sign_define('DapStopped', {
-    text='▶', texthl='WarningMsg',linehl='DapUIBreakpointsCurrentLine', numhl='ModeMsg'})
 
-vim.fn.sign_define('DapBreakpoint', {
-    text='●', texthl='ErrorMsg', linehl='', numhl=''})
+local sign = vim.fn.sign_define
 
-vim.fn.sign_define('DapBreakpointCondition', {
-    text='⊕', texthl='ErrorMsg', linehl='', numhl=''})
+sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
+sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
+sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 
-vim.fn.sign_define('DapLogPoint', {
-    text='', texthl='ErrorMsg', linehl='', numhl=''})
 
-vim.fn.sign_define('DapBreakpointRejected', {
-    text='⨷', texthl='ErrorMsg', linehl='', numhl=''})
+-- vim.fn.sign_define('DapStopped', {
+--     text='▶', texthl='WarningMsg',linehl='DapUIBreakpointsCurrentLine', numhl='ModeMsg'})
+--
+-- vim.fn.sign_define('DapBreakpoint', {
+--     text='●', texthl='ErrorMsg', linehl='', numhl=''})
+--
+-- vim.fn.sign_define('DapBreakpointCondition', {
+--     text='⊕', texthl='ErrorMsg', linehl='', numhl=''})
+--
+-- vim.fn.sign_define('DapLogPoint', {
+--     text='', texthl='ErrorMsg', linehl='', numhl=''})
+--
+-- vim.fn.sign_define('DapBreakpointRejected', {
+--     text='⨷', texthl='ErrorMsg', linehl='', numhl=''})
 
 
 vim.keymap.set("n", "<leader>du", "<cmd>lua require('dapui').toggle()<cr>")

@@ -31,3 +31,7 @@ map("n", "<leader>ta",  "<cmd>ToggleTermToggleAll<cr>")
 map("n", "<leader>t1", "<cmd>1ToggleTerm<cr>")
 map("n", "<leader>t2", "<cmd>2ToggleTerm<cr>")
 map("n", "<leader>t3", "<cmd>3ToggleTerm<cr>")
+
+map("n", "<leader>ee", "<cmd>ToggleTermSendCurrentLine<cr>")
+map("v", "<leader>ev", "<cmd>ToggleTermSendVisualSelection<cr>")
+map("v", "<leader>el", "<cmd>ToggleTermSendVisualLines<cr>")

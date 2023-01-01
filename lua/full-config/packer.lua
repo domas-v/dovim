@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
     -- colors
     use {
         'folke/tokyonight.nvim',
+        requires = 'catppuccin/nvim',
         config = function () require('full-config.plugins.colors') end
     }
 
@@ -96,6 +97,19 @@ return require('packer').startup(function(use)
             filetype_exclude = { 'startup', },
         }) end
     }
+    -- use {
+    --     'kevinhwang91/nvim-ufo',
+    --     requires = 'kevinhwang91/promise-async',
+    --     config = function ()
+    --         vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+    --         vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+    --         require('ufo').setup({
+    --             provider_selector = function(bufnr, filetype, buftype)
+    --                 return {'treesitter', 'indent'}
+    --             end
+    --         })
+    --     end
+    -- }
     -- TODO: multi-cursor
 
     -- lualine
@@ -155,11 +169,11 @@ return require('packer').startup(function(use)
         'akinsho/toggleterm.nvim',
         config = function () require('full-config.plugins.toggleterm') end
     }
-    use {
-        'hkupty/iron.nvim',
-        config = function () require('full-config.plugins.iron') end,
-        cmd = { 'IronRepl', 'IronReplHere', 'IronSend', 'IronAttach' }
-    }
+    -- use {
+    --     'hkupty/iron.nvim',
+    --     config = function () require('full-config.plugins.iron') end,
+    --     cmd = { 'IronRepl', 'IronReplHere', 'IronSend', 'IronAttach' }
+    -- }
 
     -- debug
     use {
@@ -208,7 +222,7 @@ return require('packer').startup(function(use)
         end
     }
     use {
-        -- BUG: messages on different files. (check this pr: https://github.com/edluffy/hologram.nvim/pull/26)
+        -- BUG: messages on different files. check this pr: https://github.com/edluffy/hologram.nvim/pull/26
         -- 'edluffy/hologram.nvim',
         -- config = function () require('hologram').setup({auto_display = true}) end,
         -- ft = { 'markdown', 'md' }
