@@ -9,10 +9,10 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 --terminal 
-map('t', '<C-w>h', '<C-\\><C-n><C-w>h', { noremap = true })
-map('t', '<C-w>j', '<C-\\><C-n><C-w>j', { noremap = true })
-map('t', '<C-w>k', '<C-\\><C-n><C-w>k', { noremap = true })
-map('t', '<C-w>l', '<C-\\><C-n><C-w>l', { noremap = true })
+-- map('t', '<C-w>h', '<C-\\><C-n><C-w>h', { noremap = true })
+-- map('t', '<C-w>j', '<C-\\><C-n><C-w>j', { noremap = true })
+-- map('t', '<C-w>k', '<C-\\><C-n><C-w>k', { noremap = true })
+-- map('t', '<C-w>l', '<C-\\><C-n><C-w>l', { noremap = true })
 
  -- wrapped line movement
 map("n", "k", "gk")
@@ -28,6 +28,7 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "<leader>q", "<cmd>close<cr>" )
 map("n", "<leader>Q", "<cmd>qa<cr>")
 map("n", "<esc>", "<cmd>nohl<cr>")
+map("n", "<leader><leader>w", "<cmd>set wrap!<cr>")
 
 -- yank to system clipboard
 map({"n", "v"}, "<leader>y", [["+y]])
@@ -44,7 +45,6 @@ map('t', '<C-x>', '<C-\\><C-N>', { noremap = true })
 -- map("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- word under cursor
 map("v", "<leader>r" , ":s/")  -- in visual selection
 map("n", "<leader>r", ":%s/") -- in whole buffer
--- map("n", "<leader>s", "/") -- temporary search (currently telescope fuzzy buffer search doesn't work)
 
 -- windows/buffers
 map("n", "<leader>k", "<cmd>BufferNext<cr>")
