@@ -146,7 +146,6 @@ return require('packer').startup(function(use)
         'f-person/git-blame.nvim',
         config = function () vim.g['gitblame_enabled'] = 0 end
     }
-    -- TODO: lazygit?
 
     -- autosave
     use {
@@ -173,6 +172,9 @@ return require('packer').startup(function(use)
     --     'hkupty/iron.nvim',
     --     config = function () require('full-config.plugins.iron') end,
     --     cmd = { 'IronRepl', 'IronReplHere', 'IronSend', 'IronAttach' }
+    -- }
+    -- use {
+    --     'conjure?'
     -- }
 
     -- debug
