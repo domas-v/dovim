@@ -75,12 +75,3 @@ map("n","<leader>xj", "<cmd>BufferCloseBuffersLeft<cr>")
 map("n","<leader>xk", "<cmd>BufferCloseBuffersRight<cr>")
 map("n", "<leader>x*", "<cmd>BufferCloseAllButPinned<cr>")
 
--- git
-map("n", "<leader>gg", "<cmd>Neogit<cr>")
-map("n", "<leader>gj", "<cmd>Gitsigns next_hunk<cr>")
-map("n", "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>")
-map("n", "<leader>gv", "<cmd>Gitsigns preview_hunk<cr>")
-map("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>")
-map("n", "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>")
-map("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>")
-map("n", "<leader>gb", "<cmd>GitBlameToggle<cr>")

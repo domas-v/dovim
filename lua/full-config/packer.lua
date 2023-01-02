@@ -132,19 +132,13 @@ return require('packer').startup(function(use)
 
     -- git
     use {
-        'lewis6991/gitsigns.nvim',
-        config = function () require('gitsigns').setup() end,
-        requires = 'nvim-lua/plenary.nvim'
-    }
-    use {
-        'TimUntersberger/neogit',
-        cmd = 'Neogit',
-        config = function () require('neogit').setup({integrations = {diffview = true}}) end,
-        requires = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' }
-    }
-    use {
-        'f-person/git-blame.nvim',
-        config = function () vim.g['gitblame_enabled'] = 0 end
+        'sindrets/diffview.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'lewis6991/gitsigns.nvim',
+            'f-person/git-blame.nvim',
+        },
+        config = function () require('full-config.plugins.git') end
     }
 
     -- autosave
