@@ -68,7 +68,6 @@ return require('packer').startup(function(use)
        config = function () require("full-config.plugins.noice") end
    }
     -- TODO: undotree
-    -- TODO: folds
 
     -- sanity
     use {
@@ -97,6 +96,8 @@ return require('packer').startup(function(use)
             filetype_exclude = { 'startup', },
         }) end
     }
+
+    -- BUG: folds -- ugly numbers and lines in the signcolumn 
     -- use {
     --     'kevinhwang91/nvim-ufo',
     --     requires = 'kevinhwang91/promise-async',
