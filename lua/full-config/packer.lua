@@ -224,8 +224,6 @@ return require('packer').startup(function(use)
     use {
         -- BUG: messages on different files. check this pr: https://github.com/edluffy/hologram.nvim/pull/26
         -- 'edluffy/hologram.nvim',
-        -- config = function () require('hologram').setup({auto_display = true}) end,
-        -- ft = { 'markdown', 'md' }
         'lucasdf/hologram.nvim', branch = 'get-extmarks-error-handler',
         config = function () require('hologram').setup({auto_display = true}) end,
         ft = { 'markdown', 'md' }
