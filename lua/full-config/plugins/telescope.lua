@@ -74,6 +74,7 @@ vim.keymap.set('n', '<leader>fh', "<cmd>Telescope help_tags<cr>", {})
 vim.keymap.set('n', '<leader>fk', "<cmd>Telescope keymaps<cr>", {})
 vim.keymap.set('n', '<leader>fc', "<cmd>Telescope commands<cr>", {})
 vim.keymap.set('n', '<leader>fd', "<cmd>Telescope diagnostics<cr>", {})
+vim.keymap.set('n', '<leader>fr', "<cmd>Telescope registers<cr>", {})
 
 vim.keymap.set('n', '<leader>F',  "<cmd>Telescope file_browser<cr>", {})
 vim.keymap.set('n', '<leader><',  "<cmd>Telescope buffers<cr>", {})
