@@ -226,6 +226,10 @@ return require('packer').startup(function(use)
         -- 'edluffy/hologram.nvim',
         -- config = function () require('hologram').setup({auto_display = true}) end,
         -- ft = { 'markdown', 'md' }
+        'lucasdf/hologram.nvim', branch = 'get-extmarks-error-handler',
+        config = function () require('hologram').setup({auto_display = true}) end,
+        ft = { 'markdown', 'md' }
+    }
     }
 
     -- misc
