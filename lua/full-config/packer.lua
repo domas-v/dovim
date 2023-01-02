@@ -228,6 +228,9 @@ return require('packer').startup(function(use)
         config = function () require('hologram').setup({auto_display = true}) end,
         ft = { 'markdown', 'md' }
     }
+    use {
+        'folke/zen-mode.nvim',
+        config = function() require('full-config.plugins.zenmode') end
     }
 
     -- misc
