@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
-        config = function () require('full-config.plugins.treesitter') end,
+        config = function () require('configurations.treesitter') end,
         use {
             'p00f/nvim-ts-rainbow',
             'nvim-treesitter/playground',
@@ -29,48 +29,49 @@ return require('packer').startup(function(use)
     }
 
     -- lsp
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        requires = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
+     use {
+         'VonHeikemen/lsp-zero.nvim',
+         requires = {
+             -- LSP Support
+             { 'neovim/nvim-lspconfig' },
+             { 'williamboman/mason.nvim' },
+             { 'williamboman/mason-lspconfig.nvim' },
+             { 'jose-elias-alvarez/null-ls.nvim' },
 
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-cmdline' },
-            { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
+             -- Autocompletion
+             { 'hrsh7th/nvim-cmp' },
+             { 'hrsh7th/cmp-buffer' },
+             { 'hrsh7th/cmp-cmdline' },
+             { 'hrsh7th/cmp-path' },
+             { 'saadparwaiz1/cmp_luasnip' },
+             { 'hrsh7th/cmp-nvim-lsp' },
+             { 'hrsh7th/cmp-nvim-lua' },
 
-            -- Snippets
-            { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
-        },
-        use { 'tzachar/cmp-tabnine', run='./install.sh' },
-        config = function () require('full-config.plugins.lsp') end
-    }
+             -- Snippets
+             { 'L3MON4D3/LuaSnip' },
+             { 'rafamadriz/friendly-snippets' },
+         },
+         use { 'tzachar/cmp-tabnine', run='./install.sh' },
+         config = function () require('configurations.lsp') end
+     }
 
     -- ui
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} },
-        config = function () require('full-config.plugins.telescope') end,
+        config = function () require('configurations.telescope') end,
         use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', },
         use { 'nvim-telescope/telescope-file-browser.nvim' },
         use {
             "folke/noice.nvim",
             requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-            config = function () require("full-config.plugins.noice") end
+            config = function () require("configurations.noice") end
         },
         use {
             'nvim-lualine/lualine.nvim',
             requires = 'kyazdani42/nvim-web-devicons',
-            config = function () require('full-config.plugins.lualine') end
+            config = function () require('configurations.lualine') end
         }
     }
 
@@ -78,7 +79,7 @@ return require('packer').startup(function(use)
     use {
         'folke/tokyonight.nvim',
         requires = 'catppuccin/nvim',
-        config = function () require('full-config.plugins.colors') end
+        config = function () require('configurations.colors') end
     }
 
     -- sanity
@@ -141,20 +142,21 @@ return require('packer').startup(function(use)
             'lewis6991/gitsigns.nvim',
             'f-person/git-blame.nvim',
         },
-        config = function () require('full-config.plugins.git') end
+        config = function () require('configurations.git') end
     }
 
     -- autosave
     use {
         'Pocco81/auto-save.nvim',
-        config = function() require('auto-save').setup({ execution_message = { message = "" } }) end, }
+        config = function() require('auto-save').setup({ execution_message = { message = "" } }) end,
+    }
 
     -- movement
     use {
         'ggandor/leap.nvim',
         config = function ()
-            require('leap').add_default_mappings()
             vim.cmd [[highlight LeapBackdrop guifg=#777777]]
+            require('leap').add_default_mappings()
         end
     }
     use {
@@ -166,11 +168,11 @@ return require('packer').startup(function(use)
     -- TODO: jupyter support
     use {
         'akinsho/toggleterm.nvim',
-        config = function () require('full-config.plugins.toggleterm') end
+        config = function () require('configurations.toggleterm') end
     }
     -- use {
     --     'hkupty/iron.nvim',
-    --     config = function () require('full-config.plugins.iron') end,
+    --     config = function () require('plugins.iron') end,
     --     cmd = { 'IronRepl', 'IronReplHere', 'IronSend', 'IronAttach' }
     -- }
     -- use {
@@ -178,57 +180,57 @@ return require('packer').startup(function(use)
     -- }
 
     -- debug
-    use {
-        'mfussenegger/nvim-dap',
-        requires = {
-            'mfussenegger/nvim-dap-python',
-            'rcarriga/nvim-dap-ui',
-            'theHamsta/nvim-dap-virtual-text',
-            'rcarriga/cmp-dap',
-        },
-        config = function () require('full-config.plugins.dap') end
-    }
+   use {
+       'mfussenegger/nvim-dap',
+       requires = {
+           'mfussenegger/nvim-dap-python',
+           'rcarriga/nvim-dap-ui',
+           'theHamsta/nvim-dap-virtual-text',
+           'rcarriga/cmp-dap',
+       },
+       config = function () require('configurations.dap') end
+   }
 
     -- diagnostics
-    use { "jose-elias-alvarez/null-ls.nvim" }
-    use {
-        'folke/trouble.nvim',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require('trouble').setup() end
-    }
-    use {
-        'folke/todo-comments.nvim',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function() require('todo-comments').setup() end
-    }
+   use { "jose-elias-alvarez/null-ls.nvim" }
+   use {
+       'folke/trouble.nvim',
+       requires = 'kyazdani42/nvim-web-devicons',
+       config = function() require('trouble').setup() end
+   }
+   use {
+       'folke/todo-comments.nvim',
+       requires = 'nvim-lua/plenary.nvim',
+       config = function() require('todo-comments').setup() end
+   }
 
-    -- quickfix
-    use {
-        'kevinhwang91/nvim-bqf',
-        ft = 'qf',
-        requires = { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
-    }
+   -- quickfix
+   use {
+       'kevinhwang91/nvim-bqf',
+       ft = 'qf',
+       requires = { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
+   }
 
     -- note taking
-    use {
-        'jbyuki/nabla.nvim',
-        config = function ()
-            vim.keymap.set('n', '<leader>pv', ':lua require("nabla").enable_virt()<CR>')
-            vim.keymap.set('n', '<leader>pm', ':lua require("nabla").popup()<CR>')
-        end
-    }
-    use {
-        -- BUG: 'edluffy/hologram.nvim' -- messages on different files. check this pr: https://github.com/edluffy/hologram.nvim/pull/26
-        'lucasdf/hologram.nvim', branch = 'get-extmarks-error-handler',
-        config = function () require('hologram').setup({auto_display = true}) end,
-        ft = { 'markdown', 'md' }
-    }
-    use {
-        'folke/zen-mode.nvim',
-        config = function() require('full-config.plugins.zenmode') end
-    }
+   use {
+       'jbyuki/nabla.nvim',
+       config = function ()
+           vim.keymap.set('n', '<leader>pv', ':lua require("nabla").enable_virt()<CR>')
+           vim.keymap.set('n', '<leader>pm', ':lua require("nabla").popup()<CR>')
+       end
+   }
+   use {
+       -- BUG: 'edluffy/hologram.nvim' -- messages on different files. check this pr: https://github.com/edluffy/hologram.nvim/pull/26
+       'lucasdf/hologram.nvim', branch = 'get-extmarks-error-handler',
+       config = function () require('hologram').setup({auto_display = true}) end,
+       ft = { 'markdown', 'md' }
+   }
+   use {
+       'folke/zen-mode.nvim',
+       config = function() require('configurations.zenmode') end
+   }
 
     -- misc
-    use { "dstein64/vim-startuptime" }
+   use { "dstein64/vim-startuptime" }
 
 end)
