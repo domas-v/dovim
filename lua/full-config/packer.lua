@@ -1,7 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+    use { 'wbthomason/packer.nvim' }
 
     -- treesitter
     use {
@@ -139,7 +139,10 @@ return require('packer').startup(function(use)
     -- movement
     use {
         'ggandor/leap.nvim',
-        config = function () require('leap').add_default_mappings() end
+        config = function ()
+            require('leap').add_default_mappings()
+            vim.cmd [[highlight LeapBackdrop guifg=#777777]]
+        end
     }
     use {
         'ggandor/flit.nvim',
