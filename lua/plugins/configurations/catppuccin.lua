@@ -1,21 +1,8 @@
--- require("tokyonight").setup({
--- 	-- transparent = true,
---     style = "night",
--- 	styles = {
--- 	comments = "italic",
--- 		keywords = "italic",
--- 		functions = "bold",
--- 		variables = "NONE",
--- 		-- sidebars = "transparent", -- style for sidebars, see below
--- 		-- floats = "transparent", -- style for floating windows
--- 	},
--- })
-
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = { -- :h background
-        light = "latte",
-        dark = "mocha",
+    light = "latte",
+    dark = "mocha",
     },
     transparent_background = false,
     term_colors = true,
@@ -64,6 +51,6 @@ require("catppuccin").setup({
             colored_indent_levels = false,
         }
     },
+
 })
 
-vim.cmd.colorscheme("catppuccin")

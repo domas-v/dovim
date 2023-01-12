@@ -60,7 +60,6 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<leader>dv", vim.diagnostic.open_float, opts)
     vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, opts)
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, opts)
-    vim.keymap.set("n", "<leader>dl", "<cmd>TroubleToggle<cr>", opts)
     vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 end)
 

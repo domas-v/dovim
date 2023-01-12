@@ -3,10 +3,10 @@ vim.g.maplocalleader = ";"
 local map = vim.keymap.set
 
 -- move visual selection
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+map("v", "J", ":m '>+1<CR>gv=gv", {desc = 'Move visual line down'})
+map("v", "K", ":m '<-2<CR>gv=gv", {desc = 'Move visual line up'})
+map("v", "<", "<gv", {desc = 'Move visual line left'})
+map("v", ">", ">gv", {desc = 'Move visual line right'})
 
 --terminal 
 -- map('t', '<C-w>h', '<C-\\><C-n><C-w>h', { noremap = true })
@@ -22,7 +22,7 @@ map("n", "$", "g$")
 map("n", "Y", "y$")
 
 -- handy remaps
-map("n", "J", "mzJ`z") -- join lines, stay cursor
+map("n", "J", "mzJ`z", {desc = 'Join lines'})
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 map("n", "<leader>q", "<cmd>close<cr>" )
@@ -61,17 +61,11 @@ map("n", "<leader>5", "<cmd>BufferGoto 5<cr>")
 map("n", "<leader>0", "<cmd>BufferLast<cr>")
 map("n", "<leader>wv", ":vert sb ")
 map("n", "<leader>ws", ":sbuffer ")
-map("n", "<leader>wr", "<cmd>WinResizerStartResize<cr>")
-map("n", "<leader>wm", "<cmd>WinShift<cr>")
-map("n", "<leader>wh", "<cmd>WinShift left<cr>")
-map("n", "<leader>wk", "<cmd>WinShift up<cr>")
-map("n", "<leader>wj", "<cmd>WinShift down<cr>")
-map("n", "<leader>wl", "<cmd>WinShift right<cr>")
 map("n", "<leader>X",  "<cmd>bd! %<cr>")
-map("n","<leader>xx", "<cmd>BufferClose<cr>")
-map("n","<leader>xf", "<cmd>bd ")
-map("n","<leader>xo", "<cmd>BufferCloseAllButCurrent<cr>")
-map("n","<leader>xj", "<cmd>BufferCloseBuffersLeft<cr>")
-map("n","<leader>xk", "<cmd>BufferCloseBuffersRight<cr>")
+map("n", "<leader>xx", "<cmd>BufferClose<cr>")
+map("n", "<leader>xf", "<cmd>bd ")
+map("n", "<leader>xo", "<cmd>BufferCloseAllButCurrent<cr>")
+map("n", "<leader>xj", "<cmd>BufferCloseBuffersLeft<cr>")
+map("n", "<leader>xk", "<cmd>BufferCloseBuffersRight<cr>")
 map("n", "<leader>x*", "<cmd>BufferCloseAllButPinned<cr>")
 

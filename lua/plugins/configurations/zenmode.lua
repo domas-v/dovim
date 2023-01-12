@@ -23,5 +23,3 @@ require("zen-mode").setup {
         }
     }
 }
-
-vim.keymap.set("n", "<leader><leader>z", "<cmd>ZenMode<cr>")

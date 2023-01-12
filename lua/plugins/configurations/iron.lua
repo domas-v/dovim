@@ -49,8 +49,3 @@ iron.setup{
         italic = true
     }
 }
-
-vim.keymap.set("n", "<leader>ii", "<cmd>IronRepl<cr>")
-vim.keymap.set("n", "<leader>it", "<cmd>IronReplHere<cr>")
-vim.keymap.set("n", "<leader>if", "<cmd>IronFocus<cr>")
-vim.keymap.set("n", "<leader>ih", "<cmd>IronHide<cr>")
