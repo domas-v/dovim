@@ -11,7 +11,8 @@ return {
                 kind = "vsplit",
                 integrations = {
                     diffview = true
-                }
+                },
+                disable_commit_confirmation = true
             })
             -- map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>")
             -- map("n", "<leader>gx", "<cmd>DiffviewClose<cr>")
