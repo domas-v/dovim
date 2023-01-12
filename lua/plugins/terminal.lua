@@ -5,11 +5,12 @@ return {
             require("plugins.configurations.toggleterm")
         end,
         keys = {
+            {"<c-\\>", "<cmd>ToggleTerm<cr>"},
             {"<leader>tt", "<cmd>ToggleTerm<cr>"},
-            {"<leader>tv",  "<cmd>ToggleTerm direction=vertical<cr>"},
-            {"<leader>tx",  "<cmd>ToggleTerm direction=horizontal<cr>"},
-            {"<leader>tw",  "<cmd>ToggleTerm direction=tab<cr>"},
-            {"<leader>ta",  "<cmd>ToggleTermToggleAll<cr>"},
+            {"<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>"},
+            {"<leader>tx", "<cmd>ToggleTerm direction=horizontal<cr>"},
+            {"<leader>tw", "<cmd>ToggleTerm direction=tab<cr>"},
+            {"<leader>ta", "<cmd>ToggleTermToggleAll<cr>"},
             {"<leader>t1", "<cmd>1ToggleTerm<cr>"},
             {"<leader>t2", "<cmd>2ToggleTerm<cr>"},
             {"<leader>t3", "<cmd>3ToggleTerm<cr>"},

@@ -12,7 +12,7 @@ require("toggleterm").setup({
     open_mapping = [[<c-\>]],
     hide_numbers = true,
     shade_terminals = true,
-    start_in_insert = true,
+    start_in_insert = false,
     insert_mappings = true,
     persist_size = true,
     close_on_exit = true,

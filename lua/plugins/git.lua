@@ -1,4 +1,3 @@
-local map = vim.keymap.set
 vim.g['gitblame_enabled'] = 0
 return {
     {
@@ -27,6 +26,7 @@ return {
         'lewis6991/gitsigns.nvim',
         config = function ()
             require('gitsigns').setup()
+            local map = vim.keymap.set
             map("n", "<leader>gj", "<cmd>Gitsigns next_hunk<cr>")
             map("n", "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>")
             map("n", "<leader>gv", "<cmd>Gitsigns preview_hunk<cr>")
