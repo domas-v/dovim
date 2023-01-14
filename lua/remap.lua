@@ -45,9 +45,14 @@ map('t', '<C-x>', '<C-\\><C-N>', { noremap = true })
 -- map("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- word under cursor
 map("v", "<leader>r" , ":s/")  -- in visual selection
 map("n", "<leader>r", ":%s/") -- in whole buffer
+map("n", "<C-s>", "/")
+map("n", "<C-a>", "?")
+map("i", "<C-s>", "<esc>/")
+map("i", "<C-a>", "<esc>?")
 
 -- windows/buffers
 map("n", "<leader>k", "<cmd>BufferNext<cr>")
+map("i", "<C-s>", "<esc>/")
 map("n", "<leader>j", "<cmd>BufferPrevious<cr>")
 map("n", "<leader>O", "<cmd>only<cr>")
 map("n", "<leader>*", "<cmd>BufferPin<cr>")
@@ -60,10 +65,9 @@ map("n", "<leader>4", "<cmd>BufferGoto 4<cr>")
 map("n", "<leader>5", "<cmd>BufferGoto 5<cr>")
 map("n", "<leader>0", "<cmd>BufferLast<cr>")
 map("n", "<leader>wv", ":vert sb ")
-map("n", "<leader>ws", ":sbuffer ")
+map("n", "<leader>wx", ":sbuffer ")
 map("n", "<leader>X",  "<cmd>bd! %<cr>")
 map("n", "<leader>xx", "<cmd>BufferClose<cr>")
-map("n", "<leader>xf", "<cmd>bd ")
 map("n", "<leader>xo", "<cmd>BufferCloseAllButCurrent<cr>")
 map("n", "<leader>xj", "<cmd>BufferCloseBuffersLeft<cr>")
 map("n", "<leader>xk", "<cmd>BufferCloseBuffersRight<cr>")

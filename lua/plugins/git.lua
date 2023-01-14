@@ -25,16 +25,16 @@ return {
     },
     {
         'lewis6991/gitsigns.nvim',
-        config = function ()
-            require('gitsigns').setup()
-            local map = vim.keymap.set
-            map("n", "<leader>gj", "<cmd>Gitsigns next_hunk<cr>")
-            map("n", "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>")
-            map("n", "<leader>gv", "<cmd>Gitsigns preview_hunk<cr>")
-            map("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>")
-            map("n", "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>")
-            map("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>")
-        end
+        lazy = false,
+        config = function () require('gitsigns').setup() end,
+        keys = {
+            { "<leader>gj", "<cmd>Gitsigns next_hunk<cr>", desc = "Gitsigns next" },
+            { "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>", desc = "Gitsigns prev" },
+            { "<leader>gv", "<cmd>Gitsigns preview_hunk<cr>", desc = "Gitsigns preview" },
+            { "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "Gitsigns stage" },
+            { "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>", desc = "Gitsigns undo stage" },
+            { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Gitsigns reset" }
+        }
 
     },
     {

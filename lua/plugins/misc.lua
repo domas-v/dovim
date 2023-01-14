@@ -3,8 +3,8 @@ return {
         'jbyuki/nabla.nvim',
         ft = { 'markdown', 'md' },
         keys = {
-            { '<leader>pv', ':lua require("nabla").enable_virt()<CR>', desc = "Enable Nabla" },
-            { '<leader>pm', ':lua require("nabla").popup()<CR>', desc = "Nabla popup" },
+            { '<leader><leader>ne', ':lua require("nabla").enable_virt()<CR>', desc = "Enable Nabla" },
+            { '<leader><leader>np', ':lua require("nabla").popup()<CR>', desc = "Nabla popup" },
         }
     },
     {
@@ -13,10 +13,17 @@ return {
         config = function () require('hologram').setup({auto_display = true}) end,
         ft = { 'markdown', 'md' }
     },
-    -- misc
+    -- TODO: jupyter support: https://github.com/dccsillag/magma-nvim
     {
-        'dstein64/vim-startuptime',
-        cmd = "StartupTime"
-    }
+        "iamcco/markdown-preview.nvim",
+        lazy = false, -- TODO: possible to lazy load?
+        build = function() vim.fn["mkdp#util#install"]() end,
+        keys = {
+            { "<leader><leader>m", "<cmd>MarkdownPreviewToggle<cr>", desc = "MarkdownPreview" }
+        }
+    },
+    -- {
+    --     'arakkkkk/kanban.nvim'
+    -- }
 
 }

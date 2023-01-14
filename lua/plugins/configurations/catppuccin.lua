@@ -38,10 +38,11 @@ require("catppuccin").setup({
         barbar = true,
         leap = true,
         mason = true,
-        ts_rainbow = true,
+        ts_rainbow = false,
         lsp_trouble = true,
         neogit = true,
         markdown = true,
+        symbols_outline = true,
         dap = {
             enabled = true,
             enable_ui = true, -- enable nvim-dap-ui

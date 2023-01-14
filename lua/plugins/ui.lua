@@ -1,46 +1,17 @@
 return {
     {
-        'nvim-telescope/telescope.nvim',
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'MunifTanjim/nui.nvim',
-            'rcarriga/nvim-notify',
-            'kyazdani42/nvim-web-devicons',
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', },
-        },
-        config = function () require('plugins.configurations.telescope') end,
-        keys = {
-            { '<leader>ff', "<cmd>Telescope find_files<cr>", desc = "Find files" },
-            { '<leader>fg', "<cmd>Telescope git_files<cr>", desc = "Git files" },
-            { '<leader>fo', "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
-            { '<leader>ft', "<cmd>TodoTelescope<cr>", desc = "Todo" },
-            { '<leader>fh', "<cmd>Telescope help_tags<cr>", desc = "Help" },
-            { '<leader>fk', "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
-            { '<leader>fc', "<cmd>Telescope commands<cr>", desc = "Commands" },
-            { '<leader>fd', "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
-            { '<leader>fr', "<cmd>Telescope registers<cr>", desc = "Registers" },
-            { '<leader>fj', "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
-            { '<leader><',  "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-            { '<leader>s',  "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Current buffer" },
-            { '<leader>S',  "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
-        }
-    },
-    {
         'nvim-tree/nvim-tree.lua',
-        config = function ()
-            require("nvim-tree").setup()
-        end,
+        config = function () require("nvim-tree").setup() end,
         keys = {
             { "<leader><TAB>", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
         },
     },
     {
-        'folke/noice.nvim',
-        config = function () require('plugins.configurations.noice') end
-    },
-    {
-        'nvim-lualine/lualine.nvim',
-        config = function () require('plugins.configurations.lualine') end
+        'simrat39/symbols-outline.nvim',
+        config = function () require('symbols-outline').setup() end,
+        keys = {
+            { "<leader>>", "<cmd>SymbolsOutline<cr>", desc = "SymbolsOutline" }
+        }
     },
     {
         'folke/trouble.nvim',
@@ -89,14 +60,5 @@ return {
         'kevinhwang91/nvim-bqf',
         ft = 'qf',
         dependencies = { 'junegunn/fzf', build = function() vim.fn['fzf#install']() end }
-    },
-    {
-        'folke/zen-mode.nvim',
-        config = function()
-            require("plugins.configurations.zenmode")
-        end,
-        keys = {
-            { "<leader><leader>z", "<cmd>ZenMode<cr>" }
-        }
     },
 }
