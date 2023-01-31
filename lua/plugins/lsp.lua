@@ -24,7 +24,11 @@ return {
     },
     config = function ()
         local lsp = require("lsp-zero")
+        local cmp = require('cmp')
+        local cmp_select = { behavior = cmp.SelectBehavior.Select }
+        local null_ls = require('null-ls')
 
+        --- LSP SETUP ---
         lsp.preset("recommended")
         lsp.ensure_installed({
             "sumneko_lua",
@@ -52,16 +56,12 @@ return {
             }
         })
 
-        local cmp = require('cmp')
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
         lsp.setup_nvim_cmp({
             sources = {
                 { name = 'path' },
                 { name = 'nvim_lsp', keyword_length = 1 },
                 { name = 'buffer', keyword_length = 1 },
                 { name = 'tabnine' },
-                { name = 'conjure' }
             },
             mapping = lsp.defaults.cmp_mappings({
                 ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
@@ -88,45 +88,51 @@ return {
         lsp.setup()
 
         ----- DIAGNOSTICS -----
-        local null_ls = require('null-ls')
         null_ls.setup({
             sources = {
                 null_ls.builtins.diagnostics.flake8,
                 -- TODO: mypy
-                -- diagnostics.mypy.with({
-                    --     extra_args = {"--ignore-missing-imports", "--exclude=setup.py", "--exclude='test_'"
-                    --     }
-                    -- }),
-                },
-            })
+            }
+        })
 
-            vim.diagnostic.config({
-                virtual_text = true,
-            })
+        vim.diagnostic.config({ virtual_text = true })
 
-            ------- CMP -----
-            cmp.setup.cmdline({ '/', '?' }, {
-                mapping = {
-                    ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
-                    ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
-                    ['<CR>'] = cmp.mapping.confirm({ select = true })
-                },
-                sources = {
-                    { name = 'buffer' }
-                }
-            })
+        ------- COMPLETION -----
+        cmp.setup.cmdline({ '/', '?' }, {
+            mapping = {
+                ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+                ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+                ['<CR>'] = cmp.mapping.confirm({ select = true })
+            },
+            sources = {
+                { name = 'buffer' }
+            }
+        })
 
-            cmp.setup.cmdline(':', {
-                mapping = {
-                    ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
-                    ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
-                    ['<CR>'] = cmp.mapping.confirm({ select = true })
-                },
-                sources = cmp.config.sources({
-                    { name = 'path' }
-                }, {
-                    { name = 'cmdline' }
-                })
+        cmp.setup.cmdline(':', {
+            mapping = {
+                ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+                ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+                ['<CR>'] = cmp.mapping.confirm({ select = true })
+            },
+            sources = cmp.config.sources({
+                { name = 'path' }
+            }, {
+                { name = 'cmdline' }
             })
+        })
+
+        require("cmp").setup({
+            enabled = function()
+                return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+                    or require("cmp_dap").is_dap_buffer()
+            end
+        })
+
+        cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+            sources = {
+                { name = "dap" },
+            },
+        })
     end,
 }

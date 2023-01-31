@@ -60,6 +60,14 @@ return {
             { "<F10>", '<cmd>lua require"dap".step_over()<cr>' },
             { "<F11>", '<cmd>lua require"dap".step_into()<cr>' },
             { "<F12>", '<cmd>lua require"dap".step_out()<cr>' },
+
+            { "<leader>ds", '<cmd>lua require"dap".continue()<cr>' },
+            { "<leader>dx", '<cmd>lua require"dap".terminate()<cr>' },
+            { "<leader>dc", '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>' },
+            { "<leader>dd", '<cmd>lua require"dap".toggle_breakpoint()<cr>' },
+            { "<leader>dn", '<cmd>lua require"dap".step_over()<cr>' },
+            { "<leader>di", '<cmd>lua require"dap".step_into()<cr>' },
+            { "<leader>do", '<cmd>lua require"dap".step_out()<cr>' },
         }
     }
 }

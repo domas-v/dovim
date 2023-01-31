@@ -13,4 +13,12 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("plugins")
+
+local lazy = require("lazy")
+
+if vim.g.vscode == 1 then
+    lazy.require("vscode_plugins")
+else
+    lazy.setup("plugins")
+end
+
