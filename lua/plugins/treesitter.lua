@@ -8,7 +8,14 @@ return {
     },
     config = function ()
         require("nvim-treesitter.configs").setup {
-            ensure_installed = { "help", "python", "lua", "vim" },
+            ensure_installed = {
+                "help",
+                "python",
+                "lua",
+                "vim",
+                "json",
+                "http"
+            },
             sync_install = false,
             auto_install = true,
             highlight = {
@@ -20,8 +27,8 @@ return {
                 keymaps = {
                     init_selection = '<CR>',
                     node_incremental = '<CR>',
-                    -- scope_incremental = '<TAB>',
-                    -- node_decremental = '<S-Tab>',
+                    scope_incremental = '<TAB>',
+                    node_decremental = '<S-Tab>',
                 },
             },
             indent = {
