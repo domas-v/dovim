@@ -58,7 +58,6 @@ map("n", "<leader>X",  "<cmd>bd! %<cr>")
 map("n", "<leader>O", "<cmd>only<cr>")
 
 -- HTTP:
-map("n", "<leader>hh", "<cmd>lua require('rest-nvim').run()<CR>")
-map("n", "<leader>hv", "<cmd>lua require('rest-nvim').run(true)<CR>" )
-map("n", "<leader>hl", "<cmd>lua require('rest-nvim').last()<CR>" )
-
+map("n", "<leader>hh", "<cmd>lua require('rest-nvim').run()<CR>", { desc = "Run request" })
+map("n", "<leader>hv", "<cmd>lua require('rest-nvim').run(true)<CR>", { desc = "Show request in CURL" } )
+map("n", "<leader>hl", "<cmd>lua require('rest-nvim').last()<CR>", { desc = "Run last request" } )
