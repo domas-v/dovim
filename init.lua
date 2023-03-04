@@ -13,7 +13,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- regular
 require("remap")
 require("lazy").setup("plugins", {
     change_detection = {
