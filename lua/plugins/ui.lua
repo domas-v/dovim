@@ -86,5 +86,12 @@ return {
             { "<leader>dh", "<cmd>lua require('duck').hatch()<cr>", desc = "Hatch Duck" },
             { "<leader>dc", "<cmd>lua require('duck').cook()<cr>", desc = "Cook Duck" },
         }
+    },
+    {
+        "SmiteshP/nvim-navic",
+        dependencies = { "neovim/nvim-lspconfig" },
+        config = function ()
+            vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+        end,
     }
 }

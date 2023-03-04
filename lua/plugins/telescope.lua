@@ -82,8 +82,8 @@ return {
 
             { '<leader>ft', "<cmd>TodoTelescope<cr>", desc = "Todo" },
             { '<leader>fd', "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
-            { "<leader>fl", "<cmd>Telescope lsp_document_symbols<cr>", desc = "LSP symbols" },
-            { "<leader>fL", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "LSP workspace symbols" },
+            { "<leader>l",  "<cmd>Telescope lsp_document_symbols<cr>", desc = "LSP symbols" },
+            { "<leader>L",  "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "LSP workspace symbols" },
             { "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "LSP references" },
 
             { '<leader>fy', "<cmd>Telescope neoclip<cr>", desc = "Clipboard" },
