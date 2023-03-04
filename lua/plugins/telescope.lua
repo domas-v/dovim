@@ -4,7 +4,6 @@ return {
         dependencies = {
             'nvim-lua/plenary.nvim',
             'MunifTanjim/nui.nvim',
-            'rcarriga/nvim-notify',
             'kyazdani42/nvim-web-devicons',
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', },
             { "AckslD/nvim-neoclip.lua", config = function() require('neoclip').setup() end, },
@@ -89,7 +88,7 @@ return {
 
             { '<leader>fy', "<cmd>Telescope neoclip<cr>", desc = "Clipboard" },
             { '<leader>fj', "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
-            { '<leader><',  "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+            { '<leader>b',  "<cmd>Telescope buffers<cr>", desc = "Buffers" },
             { '<leader>s',  "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Current buffer" },
             { '<leader>S',  "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
         }

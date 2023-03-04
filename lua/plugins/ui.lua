@@ -3,7 +3,7 @@ return {
         'nvim-tree/nvim-tree.lua',
         config = function () require("nvim-tree").setup() end,
         keys = {
-            { "<leader><TAB>", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
+            { "<leader><", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
         },
     },
     {
@@ -37,7 +37,26 @@ return {
     },
     {
         'romgrk/barbar.nvim',
-        dependencies = 'kyazdani42/nvim-web-devicons'
+        lazy = false,
+        dependencies = 'kyazdani42/nvim-web-devicons',
+        keys ={
+            { "<leader>*",  "<cmd>BufferPin<cr>" },
+            { "<leader>k",  "<cmd>BufferNext<cr>"},
+            { "<leader>j",  "<cmd>BufferPrevious<cr>"},
+            { "<leader>]",  "<cmd>BufferMoveNext<cr>" },
+            { "<leader>[",  "<cmd>BufferMovePrevious<cr>" },
+            { "<leader>1",  "<cmd>BufferGoto 1<cr>" },
+            { "<leader>2",  "<cmd>BufferGoto 2<cr>" },
+            { "<leader>3",  "<cmd>BufferGoto 3<cr>" },
+            { "<leader>4",  "<cmd>BufferGoto 4<cr>" },
+            { "<leader>5",  "<cmd>BufferGoto 5<cr>" },
+            { "<leader>0",  "<cmd>BufferLast<cr>" },
+            { "<leader>xx", "<cmd>BufferClose<cr>" },
+            { "<leader>xo", "<cmd>BufferCloseAllButCurrent<cr>" },
+            { "<leader>xj", "<cmd>BufferCloseBuffersLeft<cr>" },
+            { "<leader>xk", "<cmd>BufferCloseBuffersRight<cr>" },
+            { "<leader>x*", "<cmd>BufferCloseAllButPinned<cr>" },
+        }
     },
     {
         'sindrets/winshift.nvim',

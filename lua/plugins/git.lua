@@ -3,7 +3,6 @@ return {
     {
         'TimUntersberger/neogit',
         dependencies = {
-            'sindrets/diffview.nvim',
             'nvim-lua/plenary.nvim',
         },
         config = function ()
@@ -14,13 +13,9 @@ return {
                 },
                 disable_commit_confirmation = true
             })
-            -- map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>")
-            -- map("n", "<leader>gx", "<cmd>DiffviewClose<cr>")
         end,
         keys = {
             { "<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit" },
-            { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "DiffviewOpen" },
-            { "<leader>gx", "<cmd>DiffviewClose<cr>", desc = "DiffviewClose" },
         }
     },
     {

@@ -1,5 +1,4 @@
 require("settings")
-require("remap")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -14,11 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local lazy = require("lazy")
-
-if vim.g.vscode == 1 then
-    lazy.require("vscode_plugins")
-else
-    lazy.setup("plugins")
-end
+-- regular
+require("remap")
+require("lazy").setup("plugins")
 
