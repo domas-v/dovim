@@ -35,13 +35,20 @@ return {
                 name = 'minimal',
                 set_lsp_keymaps = true,
                 manage_nvim_cmp = true,
-                suggest_lsp_servers = false,
+                suggest_lsp_servers = true,
+            })
+
+            lsp.ensure_installed({
+                'pyright',
+                'lua_ls',
+                'jsonls',
+                'bashls',
+                'marksman',
             })
 
             local cmp = require('cmp')
             local cmp_select = { behavior = cmp.SelectBehavior.Select }
             local null_ls = require('null-ls')
-
 
             --- LSP SETUP ---
             lsp.configure('pyright', {
