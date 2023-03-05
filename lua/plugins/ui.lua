@@ -4,13 +4,15 @@ return {
         config = function () require("nvim-tree").setup() end,
         keys = {
             { "<leader><", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
+            { "<leader>,", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
         },
     },
     {
         'simrat39/symbols-outline.nvim',
         config = function () require('symbols-outline').setup() end,
         keys = {
-            { "<leader>>", "<cmd>SymbolsOutline<cr>", desc = "SymbolsOutline" }
+            { "<leader>>", "<cmd>SymbolsOutline<cr>", desc = "SymbolsOutline" },
+            { "<leader>.", "<cmd>SymbolsOutline<cr>", desc = "SymbolsOutline" },
         }
     },
     {
@@ -140,6 +142,9 @@ return {
         "folke/noice.nvim",
         config = function()
             require("noice").setup({
+                messages = {
+                    enabled = false
+                },
                 lsp = {
                     override = {
                         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
