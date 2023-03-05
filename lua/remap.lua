@@ -53,7 +53,7 @@ map("i", "<C-a>", "<esc>?")
 -- windows/buffers
 map("i", "<C-s>", "<esc>/")
 map("n", "<leader>wv", ":vert sb ")
-map("n", "<leader>wx", ":sbuffer ")
+map("n", "<leader>ws", ":sbuffer ")
 map("n", "<leader>X",  "<cmd>bd! %<cr>")
 map("n", "<leader>O", "<cmd>only<cr>")
 

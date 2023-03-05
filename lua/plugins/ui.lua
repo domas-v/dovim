@@ -93,5 +93,31 @@ return {
         config = function ()
             vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
         end,
+    },
+    {
+        "anuvyklack/windows.nvim",
+        lazy = false,
+        dependencies = { "anuvyklack/middleclass", "anuvyklack/animation.nvim" },
+        init = function ()
+            vim.o.winwidth = 10
+            vim.o.winminwidth = 10
+            vim.o.equalalways = false
+        end,
+        config = function()
+            require('windows').setup({
+                autowidth = {
+                    enable = true,
+                    winwidth = 0.75,
+                    filetype = {
+                        help = 2,
+                    },
+                },
+            })
+        end,
+        keys = {
+            { "<leader>mm", "<cmd>WindowsMaximize<cr>", desc = "Maximise window" },
+            { "<leader>me", "<cmd>WindowsEqualize<cr>", desc = "Equalize windows" },
+            { "<leader>ma", "<cmd>WindowsToggleAutowidth<cr>", desc = "Toggle windows autowidth" }
+        }
     }
 }
