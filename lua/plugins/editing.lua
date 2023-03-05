@@ -31,6 +31,9 @@ return {
             { "<leader>rn", ":IncRename ", desc = "Incremental rename" }
         }
     },
+    {
+        'mg979/vim-visual-multi',
+        keys = { { "<C-n>" } }
+    },
     'RRethy/vim-illuminate',
-    'mg979/vim-visual-multi',
 }

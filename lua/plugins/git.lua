@@ -1,4 +1,3 @@
-vim.g['gitblame_enabled'] = 0
 return {
     {
         'TimUntersberger/neogit',
@@ -28,12 +27,12 @@ return {
             { "<leader>gv", "<cmd>Gitsigns preview_hunk<cr>", desc = "Gitsigns preview" },
             { "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "Gitsigns stage" },
             { "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>", desc = "Gitsigns undo stage" },
-            { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Gitsigns reset" }
-        }
+            { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Gitsigns reset" },
 
-    },
-    {
-        'f-person/git-blame.nvim',
-        keys = { { "<leader>gb", "<cmd>GitBlameToggle<cr>" } }
+            -- toggles
+            { "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Git blame" },
+            { "<leader>gw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Git diff words" },
+            { "<leader>gd", "<cmd>Gitsigns toggle_deleted<cr>", desc = "Git show deleted" },
+        }
     }
 }
