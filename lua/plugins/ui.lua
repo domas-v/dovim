@@ -128,5 +128,22 @@ return {
             { "<leader>me", "<cmd>WindowsEqualize<cr>", desc = "Equalize windows" },
             { "<leader>ma", "<cmd>WindowsToggleAutowidth<cr>", desc = "Toggle windows autowidth" }
         }
+    },
+    {
+        "folke/zen-mode.nvim",
+        config = function() require("zen-mode").setup({
+            options = {
+                signcolumn = "no",
+                number = false,
+                relativenumber = false,
+                cursorline = false,
+                cursorcolumn = false,
+                foldcolumn = "0",
+                list = false,
+            },
+        }) end,
+        keys = {
+            { "<leader><leader>z", "<cmd>ZenMode<cr>", desc = "Zen mode" }
+        }
     }
 }
