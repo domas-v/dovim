@@ -24,6 +24,13 @@ return {
         'Pocco81/auto-save.nvim',
         config = function() require('auto-save').setup({ execution_message = { message = "" } }) end,
     },
+    {
+        "smjonas/inc-rename.nvim",
+        config = function() require("inc_rename").setup() end,
+        keys = {
+            { "<leader>rn", ":IncRename ", desc = "Incremental rename" }
+        }
+    },
     'RRethy/vim-illuminate',
     'mg979/vim-visual-multi',
 }

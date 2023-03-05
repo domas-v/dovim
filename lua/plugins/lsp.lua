@@ -8,6 +8,10 @@ return {
         end
     },
     {
+        "folke/neodev.nvim",
+        config = function () require("neodev").setup() end
+    },
+    {
         'VonHeikemen/lsp-zero.nvim',
         dependencies = {
             -- LSP Support

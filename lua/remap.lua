@@ -43,8 +43,8 @@ map('t', '<C-x>', '<C-\\><C-N>', { noremap = true })
 
 -- search & replace
 -- map("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- word under cursor
-map("v", "<leader>r" , ":s/")  -- in visual selection
-map("n", "<leader>r", ":%s/") -- in whole buffer
+map("v", "<leader>rr" , ":s/", { desc = "Search & Replace" })  -- in visual selection
+map("n", "<leader>rr", ":%s/", { desc = "Search & Replace" }) -- in whole buffer
 map("n", "<C-s>", "/")
 map("n", "<C-a>", "?")
 map("i", "<C-s>", "<esc>/")

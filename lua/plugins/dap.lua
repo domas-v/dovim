@@ -40,13 +40,20 @@ return {
 
         end,
         keys = {
-            { "<leader>du",  "<cmd>lua require('dapui').toggle()<cr>", desc = "Toggle DAP UI" },
+            { "<leader>du", "<cmd>lua require('dapui').toggle()<cr>", desc = "Toggle DAP UI" },
             { "<leader>dr", "<cmd>lua require('dap').repl.toggle()<cr>", desc = "Toggle DAP Repl" },
             { "<leader>dt", "<cmd>DapVirtualTextToggle<cr>", desc = "Toggle DAP Virtual text" },
             { "<leader>de", "<cmd>lua require('dapui').eval()<cr>", desc = "DAP Eval" },
             { "<leader>df", "<cmd>lua require('dapui').float_element()<cr>", desc = "Toggle DAP Float element" },
             { "<leader>dR", "<cmd>DapVirtualTextForceRefresh<cr>", desc = "DAP Refresh virtual text" },
             { '<leader>dm', "<cmd>lua require('dap-python').test_method()<cr>", desc = "Test python method" },
+
+            { "<leader>ds", "<cmd>lua require'dap'.continue()<cr>", desc = "Start DAP" },
+            { "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", desc = "Stop DAP" },
+            { "<leader>dd", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Breakpoint" },
+            { "<leader>dn", "<cmd>lua require'dap'.step_over()<cr>", desc = "Step over" },
+            { "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", desc = "Step into" },
+            { "<leader>do", "<cmd>lua require'dap'.step_out()<cr>", desc = "Step out" },
 
             { "<F5>",  "<cmd>lua require'dap'.continue()<cr>", desc = "Start DAP" },
             { "<F6>",  "<cmd>lua require'dap'.terminate()<cr>", desc = "Stop DAP" },
@@ -55,12 +62,6 @@ return {
             { "<F11>", "<cmd>lua require'dap'.step_into()<cr>", desc = "Step into" },
             { "<F12>", "<cmd>lua require'dap'.step_out()<cr>", desc = "Step out" },
 
-            { "<leader>ds", "<cmd>lua require'dap'.continue()<cr>", desc = "Start DAP" },
-            { "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", desc = "Stop DAP" },
-            { "<leader>dd", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Breakpoint" },
-            { "<leader>dn", "<cmd>lua require'dap'.step_over()<cr>", desc = "Step over" },
-            { "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", desc = "Step into" },
-            { "<leader>do", "<cmd>lua require'dap'.step_out()<cr>", desc = "Step out" },
         }
     }
 }
