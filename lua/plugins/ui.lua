@@ -131,17 +131,7 @@ return {
     },
     {
         "folke/zen-mode.nvim",
-        config = function() require("zen-mode").setup({
-            options = {
-                signcolumn = "no",
-                number = false,
-                relativenumber = false,
-                cursorline = false,
-                cursorcolumn = false,
-                foldcolumn = "0",
-                list = false,
-            },
-        }) end,
+        config = function() require("zen-mode").setup() end,
         keys = {
             { "<leader><leader>z", "<cmd>ZenMode<cr>", desc = "Zen mode" }
         }
