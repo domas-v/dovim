@@ -41,8 +41,8 @@ return {
         dependencies = 'kyazdani42/nvim-web-devicons',
         keys ={
             { "<leader>*",  "<cmd>BufferPin<cr>" },
-            { "<leader>k",  "<cmd>BufferNext<cr>"},
-            { "<leader>j",  "<cmd>BufferPrevious<cr>"},
+            { "<leader>n",  "<cmd>BufferNext<cr>"},
+            { "<leader>p",  "<cmd>BufferPrevious<cr>"},
             { "<leader>]",  "<cmd>BufferMoveNext<cr>" },
             { "<leader>[",  "<cmd>BufferMovePrevious<cr>" },
             { "<leader>1",  "<cmd>BufferGoto 1<cr>" },
@@ -107,11 +107,20 @@ return {
             require('windows').setup({
                 autowidth = {
                     enable = true,
-                    winwidth = 0.75,
+                    winwidth = 0.80,
                     filetype = {
                         help = 2,
                     },
                 },
+                ignore = {
+                    buftype = { "quickfix" },
+                    filetype = { "neo-tree" }
+                },
+                animation = {
+                    enable = true,
+                    duration = 200,
+                    fps = 30
+                }
             })
         end,
         keys = {

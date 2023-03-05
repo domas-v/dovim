@@ -57,6 +57,13 @@ map("n", "<leader>ws", ":sbuffer ")
 map("n", "<leader>X",  "<cmd>bd! %<cr>")
 map("n", "<leader>O", "<cmd>only<cr>")
 
+-- tabs
+map("n", "<C-w>t", "<cmd>tab split<cr>")
+map("n", "<C-w>T", "<cmd>tabclose<cr>")
+map("n", "<leader>TT", "<cmd>tab split<cr>")
+map("n", "<leader>TX", "<cmd>tabclose<cr>")
+map("n", "<leader>Tx", "<cmd>tabclose<cr>")
+
 -- HTTP:
 map("n", "<leader>hh", "<cmd>lua require('rest-nvim').run()<CR>", { desc = "Run request" })
 map("n", "<leader>hv", "<cmd>lua require('rest-nvim').run(true)<CR>", { desc = "Show request in CURL" } )
