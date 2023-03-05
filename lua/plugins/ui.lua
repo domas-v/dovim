@@ -113,8 +113,8 @@ return {
                     },
                 },
                 ignore = {
-                    buftype = { "quickfix" },
-                    filetype = { "neo-tree" }
+                    buftype = { "quickfix", "nofile" },
+                    filetype = { "NvimTree", "Outline" }
                 },
                 animation = {
                     enable = true,
