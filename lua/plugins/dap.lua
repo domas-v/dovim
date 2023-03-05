@@ -16,11 +16,11 @@ return {
                     elements = {
                         {
                             id = "repl",
-                            size = 0.5
+                            size = 0.6
                         },
                         {
                             id = "console",
-                            size = 0.5
+                            size = 0.4
                         }
                     },
                     position = "right",

@@ -3,5 +3,6 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
         require("rest-nvim").setup()
-    end
+    end,
+    ft = { "http" },
 }
