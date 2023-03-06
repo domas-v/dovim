@@ -115,8 +115,8 @@ return {
                     },
                 },
                 ignore = {
-                    buftype = { "quickfix", "nofile" },
-                    filetype = { "NvimTree", "Outline" }
+                    buftype = { "quickfix", "nofile", "prompt", "terminal" },
+                    filetype = { "NvimTree", "Outline", "dap-repl", "dapui_console" }
                 },
                 animation = {
                     enable = false,
