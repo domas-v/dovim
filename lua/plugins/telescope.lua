@@ -7,20 +7,23 @@ return {
             'kyazdani42/nvim-web-devicons',
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', },
             { "AckslD/nvim-neoclip.lua", config = function() require('neoclip').setup() end, },
+            { "nvim-telescope/telescope-live-grep-args.nvim" },
         },
         config = function ()
             local actions = require("telescope.actions")
+            local lga_actions = require("telescope-live-grep-args.actions")
+
             require("telescope").setup({
                 defaults = {
                     vimgrep_arguments = {
-                        'rg',
-                        '--color=never',
-                        '--no-heading',
-                        '--with-filename',
-                        '--line-number',
-                        '--column',
-                        '--smart-case',
-                        '--trim',
+                        "rg",
+                        "--color=never",
+                        "--no-heading",
+                        "--with-filename",
+                        "--line-number",
+                        "--column",
+                        "--smart-case",
+                        "--trim",
                     },
                     mappings = {
                         i = {
@@ -66,11 +69,21 @@ return {
                         case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
                         -- the default case_mode is "smart_case"
                     },
-                }
-            })
+                    live_grep_args = {
+                        auto_quoting = true,
+                        mappings = {
+                        i = {
+                            ["<C-e>"] = lga_actions.quote_prompt(),
+                            ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob **/" }),
+                        },
+                    },
+                        }
+                    }
+                })
 
-            require('telescope').load_extension('fzf')
-            require('telescope').load_extension('neoclip')
+            require("telescope").load_extension("fzf")
+            require("telescope").load_extension("neoclip")
+            require("telescope").load_extension("live_grep_args")
         end,
         keys = {
             { '<leader>ff', "<cmd>Telescope find_files<cr>", desc = "Find files" },
@@ -90,7 +103,8 @@ return {
             { '<leader>fj', "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
             { '<leader>b',  "<cmd>Telescope buffers<cr>", desc = "Buffers" },
             { '<leader>s',  "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Current buffer" },
-            { '<leader>S',  "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+            -- { '<leader>S',  "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+            { '<leader>S',  "<cmd>Telescope live_grep_args<cr>", desc = "Live grep" },
         }
     },
 }
