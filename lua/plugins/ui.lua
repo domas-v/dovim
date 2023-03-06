@@ -119,7 +119,7 @@ return {
                     filetype = { "NvimTree", "Outline" }
                 },
                 animation = {
-                    enable = true,
+                    enable = false,
                     duration = 200,
                     fps = 30
                 }

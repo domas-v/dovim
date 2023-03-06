@@ -27,7 +27,7 @@ return {
         end,
         keys = {
             { "<c-\\>", "<cmd>ToggleTerm<cr>" },
-            { "<leader>tt", "<cd>ToggleTerm<cr>" },
+            { "<leader>tt", "<cmd>ToggleTerm<cr>" },
             { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>" },
             { "<leader>ts", "<cmd>ToggleTerm direction=horizontal<cr>" },
             { "<leader>tw", "<cmd>ToggleTerm direction=tab<cr>" },
