@@ -1,4 +1,5 @@
 {
+  "CodeGPT.nvim": { "branch": "master", "commit": "53b3e75af4ddd281d09fcd9574f8cebdf3198010" },
   "Comment.nvim": { "branch": "master", "commit": "6821b3ae27a57f1f3cf8ed030e4a55d70d0c4e43" },
   "LuaSnip": { "branch": "master", "commit": "836d4f5a9970819b60b1010fd8709a2ff88416d8" },
   "auto-save.nvim": { "branch": "main", "commit": "979b6c82f60cfa80f4cf437d77446d0ded0addf0" },
@@ -9,7 +10,6 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "cmp-nvim-lua": { "branch": "main", "commit": "f3491638d123cfd2c8048aefaf66d246ff250ca6" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
-  "cmp-tabnine": { "branch": "main", "commit": "a6cb553143573861d2d98da86ceb3074c87fc536" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "copilot.vim": { "branch": "release", "commit": "9e869d29e62e36b7eb6fb238a4ca6a6237e7d78b" },
   "duck.nvim": { "branch": "main", "commit": "b1a3b4e52eec886bf4ce5ed692a2162d504d9632" },
@@ -49,6 +49,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "cfa9b70ee85f9ead92c691cbc0b134a441864080" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "542e0879d524ba717234fcba049b6c2da7989d5a" },
   "nvim-web-devicons": { "branch": "master", "commit": "4af94fec29f508159ceab5413383e5dedd6c24e3" },
+  "octo.nvim": { "branch": "master", "commit": "ab5dbe20dc276348019676e5c3e97cb391e46b1b" },
   "playground": { "branch": "master", "commit": "4044b53c4d4fcd7a78eae20b8627f78ce7dc6f56" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "rest.nvim": { "branch": "main", "commit": "0fdb69f328529b34a2279c14be63b3325dc52740" },

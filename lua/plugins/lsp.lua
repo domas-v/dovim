@@ -37,8 +37,7 @@ return {
             'rcarriga/cmp-dap',
 
             -- Snippets
-            'L3MON4D3/LuaSnip' ,
-            { 'tzachar/cmp-tabnine', build='./install.sh' },
+            'L3MON4D3/LuaSnip'
         },
         config = function ()
             local lsp = require('lsp-zero').preset({
@@ -153,4 +152,10 @@ return {
             })
         end,
     },
+    {
+        "dpayne/CodeGPT.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim"
+        }
+    }
 }
