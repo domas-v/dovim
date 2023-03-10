@@ -60,14 +60,22 @@ return {
                         enabled = true,
                         colored_indent_levels = false,
                     }
-                },
-
-})
-            vim.cmd.colorscheme("catppuccin")
-            vim.cmd [[highlight LeapBackdrop guifg=#777777]]
+                }
+            })
         end
-
+    },
+    {
+        "rebelot/kanagawa.nvim",
+        config = function () require('kanagawa').setup({
+            colors = {
+                theme = {
+                    all = {
+                        ui = {
+                            bg_gutter = "none"
+                        }
+                    }
+                }
+            }
+        }) end
     }
 }
-
-

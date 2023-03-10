@@ -3,8 +3,8 @@ return {
         'nvim-tree/nvim-tree.lua',
         config = function () require("nvim-tree").setup() end,
         keys = {
-            { "<leader><", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
-            { "<leader>,", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
+            { "<leader><", "<cmd>NvimTreeFindFileToggle<cr>", desc = "NvimTree" },
+            { "<leader>,", "<cmd>NvimTreeFindFileToggle<cr>", desc = "NvimTree" },
         },
     },
     {
@@ -96,41 +96,41 @@ return {
             vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
         end,
     },
-    {
-        "anuvyklack/windows.nvim",
-        lazy = false,
-        dependencies = { "anuvyklack/middleclass", "anuvyklack/animation.nvim" },
-        init = function ()
-            vim.o.winwidth = 10
-            vim.o.winminwidth = 10
-            vim.o.equalalways = false
-        end,
-        config = function()
-            require('windows').setup({
-                autowidth = {
-                    enable = true,
-                    winwidth = 0.80,
-                    filetype = {
-                        help = 2,
-                    },
-                },
-                ignore = {
-                    buftype = { "quickfix", "nofile", "prompt", "terminal" },
-                    filetype = { "NvimTree", "Outline", "dap-repl", "dapui_console" }
-                },
-                animation = {
-                    enable = false,
-                    duration = 200,
-                    fps = 30
-                }
-            })
-        end,
-        keys = {
-            { "<leader>mm", "<cmd>WindowsMaximize<cr>", desc = "Maximise window" },
-            { "<leader>me", "<cmd>WindowsEqualize<cr>", desc = "Equalize windows" },
-            { "<leader>ma", "<cmd>WindowsToggleAutowidth<cr>", desc = "Toggle windows autowidth" }
-        }
-    },
+    -- {
+    --     "anuvyklack/windows.nvim",
+    --     lazy = false,
+    --     dependencies = { "anuvyklack/middleclass", "anuvyklack/animation.nvim" },
+    --     init = function ()
+    --         vim.o.winwidth = 10
+    --         vim.o.winminwidth = 10
+    --         vim.o.equalalways = false
+    --     end,
+    --     config = function()
+    --         require('windows').setup({
+    --             autowidth = {
+    --                 enable = true,
+    --                 winwidth = 0.80,
+    --                 filetype = {
+    --                     help = 2,
+    --                 },
+    --             },
+    --             ignore = {
+    --                 buftype = { "quickfix", "nofile", "prompt", "terminal" },
+    --                 filetype = { "NvimTree", "Outline", "dap-repl", "dapui_console" }
+    --             },
+    --             animation = {
+    --                 enable = false,
+    --                 duration = 200,
+    --                 fps = 30
+    --             }
+    --         })
+    --     end,
+    --     keys = {
+    --         { "<leader>mm", "<cmd>WindowsMaximize<cr>", desc = "Maximise window" },
+    --         { "<leader>me", "<cmd>WindowsEqualize<cr>", desc = "Equalize windows" },
+    --         { "<leader>ma", "<cmd>WindowsToggleAutowidth<cr>", desc = "Toggle windows autowidth" }
+    --     }
+    -- },
     {
         "folke/zen-mode.nvim",
         config = function() require("zen-mode").setup() end,
