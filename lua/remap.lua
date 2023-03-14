@@ -59,8 +59,11 @@ map("n", "<leader>O", "<cmd>only<cr>")
 
 -- tabs
 map("n", "<C-w>t", "<cmd>tab split<cr>")
-map("n", "<C-w>T", "<cmd>tabclose<cr>")
+map("n", "<C-w>T", "<cmd>tab split<cr>")
+map("n", "<C-w>x", "<cmd>tabclose<cr>")
+map("n", "<C-w>X", "<cmd>tabclose<cr>")
 map("n", "<leader>tn", "<cmd>tab split<cr>")
+map("n", "<leader>tc", "<cmd>tabclose<cr>")
 map("n", "<leader>TT", "<cmd>tab split<cr>")
 map("n", "<leader>TX", "<cmd>tabclose<cr>")
 map("n", "<leader>Tx", "<cmd>tabclose<cr>")
